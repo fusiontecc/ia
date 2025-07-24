@@ -7,19 +7,9 @@
   --button-hover: #45a049;
 }
 
-.light {
-  --bg: #f1f1f1;
-  --text: #111;
-  --chat-bg: #fff;
-  --message-bg: #e6e6e6;
-  --button-bg: #008CBA;
-  --button-hover: #007bb5;
-}
-
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   font-family: "Segoe UI", sans-serif;
 }
 
@@ -36,8 +26,11 @@ body {
   display: none;
 }
 
-#login-container, #chat-container, #contacts-container, #call-screen {
-  background-color: var(--chat-bg);
+#login-container,
+#contacts-container,
+#chat-container,
+#call-screen {
+  background: var(--chat-bg);
   padding: 30px;
   border-radius: 12px;
   width: 100%;
@@ -45,7 +38,8 @@ body {
   box-shadow: 0 0 20px #000;
 }
 
-input[type="text"], input[type="file"] {
+input[type="text"],
+input[type="file"] {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -78,7 +72,7 @@ header {
 }
 
 #chat-box {
-  background-color: var(--chat-bg);
+  background: var(--chat-bg);
   height: 300px;
   overflow-y: auto;
   padding: 10px;
@@ -89,7 +83,7 @@ header {
 .message {
   margin-bottom: 12px;
   padding: 10px;
-  background-color: var(--message-bg);
+  background: var(--message-bg);
   border-radius: 8px;
   position: relative;
 }
@@ -101,39 +95,16 @@ header {
   margin-top: 4px;
 }
 
-.reactions button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 5px;
-  font-size: 18px;
-}
-
-#message-form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-ul#contacts-list {
-  list-style: none;
-  padding: 0;
-}
-
-ul#contacts-list li {
-  padding: 10px;
-  border: 1px solid #444;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-ul#contacts-list li:hover {
-  background-color: var(--message-bg);
-}
-
 img {
   max-width: 200px;
   border-radius: 8px;
   margin-top: 5px;
+}
+
+video {
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
