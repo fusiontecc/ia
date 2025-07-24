@@ -1,0 +1,139 @@
+:root {
+  --bg: #1f1f1f;
+  --text: white;
+  --chat-bg: #111;
+  --message-bg: #333;
+  --button-bg: #4caf50;
+  --button-hover: #45a049;
+}
+
+.light {
+  --bg: #f1f1f1;
+  --text: #111;
+  --chat-bg: #fff;
+  --message-bg: #e6e6e6;
+  --button-bg: #008CBA;
+  --button-hover: #007bb5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#login-container, #chat-container, #contacts-container, #call-screen {
+  background-color: var(--chat-bg);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 20px #000;
+}
+
+input[type="text"], input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  background-color: var(--button-bg);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#chat-box {
+  background-color: var(--chat-bg);
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.message {
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: var(--message-bg);
+  border-radius: 8px;
+  position: relative;
+}
+
+.message span.time {
+  font-size: 12px;
+  color: gray;
+  display: block;
+  margin-top: 4px;
+}
+
+.reactions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+#message-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+ul#contacts-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#contacts-list li {
+  padding: 10px;
+  border: 1px solid #444;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+ul#contacts-list li:hover {
+  background-color: var(--message-bg);
+}
+
+img {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
