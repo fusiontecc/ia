@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Supremo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Supremo - Chamadas Reais</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- TELA DE LOGIN -->
+  <!-- LOGIN -->
   <div id="login-container">
     <h2>Bem-vindo!</h2>
     <input type="text" id="username" placeholder="Seu nome" />
@@ -15,32 +15,28 @@
     <button onclick="login()">Entrar</button>
   </div>
 
-  <!-- TELA DE CONTATOS -->
+  <!-- CONTATOS -->
   <div id="contacts-container" class="hidden">
     <header>
       <h2>Seus Contatos</h2>
-      <button onclick="createGroup()">➕ Novo Grupo</button>
       <button onclick="logout()">🚪 Sair</button>
     </header>
     <ul id="contacts-list"></ul>
   </div>
 
-  <!-- TELA DE CHAT -->
+  <!-- CHAT -->
   <div id="chat-container" class="hidden">
     <header>
       <h2 id="chat-title"></h2>
-      <div>
-        <button onclick="startCall(false)">📞 Áudio</button>
-        <button onclick="startCall(true)">📹 Vídeo</button>
-        <button onclick="goBack()">⬅️ Voltar</button>
-      </div>
+      <button onclick="goBack()">⬅️ Voltar</button>
     </header>
     <div id="chat-box"></div>
     <div id="message-form">
       <input type="text" id="message-input" placeholder="Digite sua mensagem..." />
       <input type="file" id="imageInput" accept="image/*" />
       <button onclick="sendMessage()">Enviar</button>
-      <button onclick="simulateCall()">📞 Ligar</button>
+      <button onclick="startCall(false)">📞 Ligar (Áudio)</button>
+      <button onclick="startCall(true)">📹 Ligar (Vídeo)</button>
       <button id="recordScreenBtn" type="button">🎥 Gravar Tela</button>
       <button id="recordAudioBtn" type="button">🎙️ Gravar Áudio</button>
     </div>
@@ -48,12 +44,14 @@
 
   <!-- TELA DE CHAMADA -->
   <div id="call-screen" class="hidden">
-    <h2 id="call-status">Em chamada com <span id="call-name"></span></h2>
-    <video id="videoElement" autoplay playsinline class="hidden" width="300"></video>
+    <h2>Ligando para <span id="call-to"></span>...</h2>
+    <video id="local-video" autoplay muted class="hidden" width="120" style="border-radius:8px;"></video>
+    <video id="remote-video" autoplay class="hidden" width="300" style="border-radius:8px;"></video>
     <button onclick="endCall()">Desligar</button>
-    <button onclick="startRecordingCall()">📹 Gravar Chamada</button>
   </div>
 
+  <!-- PEERJS -->
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
